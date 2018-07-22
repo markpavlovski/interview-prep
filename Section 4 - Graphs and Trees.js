@@ -153,6 +153,78 @@ bfs(testTree)
 
 
 
+const newList = new ListNode(10,
+  new ListNode(20,
+    new ListNode(30,
+      new ListNode(40)
+    )
+  )
+)
+
+
+console.log(newList)
+
+
+
+const printList = node => {
+  if (!node) return null
+  console.log(node.val)
+  printList(node.next)
+}
+
+printList(newList)
+console.log('\n')
+
+const reverseListClone = head => {
+  let curr = head
+  let newHead = null
+  while (curr) {
+    newHead = new ListNode(curr.val, newHead)
+    curr = curr.next
+  }
+  return newHead
+}
+
+printList(reverseListClone(newList))
+console.log('\n')
+
+
+
+const reverseList = node => {
+  if (!node.next) return node
+
+  const next = node.next
+  const newHead = reverseList(next)
+
+  node.next = null
+  next.next = node
+
+  return newHead
+}
+
+printList(reverseList(newList))
+console.log('\n')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
