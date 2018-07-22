@@ -14,10 +14,10 @@ const merge = (a,b) => {
 const x = [1,1,2,3,5,8,13]
 const y = [14]
 
-console.log(merge(x,y))
+// console.log(merge(x,y))
 
 const mergeSort = arr => {
-  if (arr.length<=1) return arr
+  if (arr.length <= 1) return arr
   const middle = arr.length/2
   const left = []
   const right = []
@@ -25,4 +25,31 @@ const mergeSort = arr => {
   return merge(mergeSort(left),mergeSort(right))
 }
 
-console.log(mergeSort([4,2,4,6,8,2,90,23]))
+// console.log(mergeSort([4,2,4,6,8,2,90,23]))
+
+//
+// const quickSort = (arr,low,high) => {
+//   let i = low || 0
+//   let j = high || arr.length-1
+//   const pivot = arr[0]
+//   while(j-i>1){
+//     if (arr[i] <= pivot) {
+//       i++
+//       continue
+//     }
+//     if (arr[j] >= pivot) {
+//       j--
+//       continue
+//     }
+//     const temp = arr[i]
+//     arr[i] = arr[j]
+//     arr[j] = temp
+//     i++
+//     j--
+//   }
+//   // quickSort(arr,0,pivot-1)
+//   // quickSort(arr,pivot+1)
+//   return arr
+// }
+//
+// console.log(quickSort([4,5,3,2,1]))
